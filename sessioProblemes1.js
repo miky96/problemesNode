@@ -69,7 +69,7 @@ console.printaki2();
 //els callbacks son els ultims en executarse, els callbacks no asseguren cap ordre ja que dependrà
 //del tamany del fitxer
 // sempre s'executara abans b que a. en la funcio callback "i" ja serà el tamany llista.lentgh
-f6 = function(llista,callback_final){
+/*f6 = function(llista,callback_final){
 	var nova_llista=[];
   var i;
 	fs= require('fs');
@@ -90,6 +90,7 @@ f6 = function(llista,callback_final){
 
 	return nova_llista;
 }
+*/
 //solucio Exercici 8
 f6 = function(llista,callback_final){
 	var nova_llista=[];
@@ -120,8 +121,25 @@ f6 = function(llista,callback_final){
 	}
   return nova_llista;
 }
+//f6(['a1.txt,a2.txt'],function (result){ console.log(result) })
+
 //problema9 ??
 //es el mateix que el 8 on fs.redFile es funcio, el async map fa un map de la funció
 //asyncMap =function(llista,funcio,callback_final)
-f7=asyncMap(llista,)
+//f7=asyncMap(llista,f,callbackfinal);
 //problema10
+console.log("problema10")
+var o1={
+  counter:function(a){
+    var contador=0; 
+    contador+=a;
+    if (this.notify!=undefined||this.notify!=null){
+      return this.notify;
+    } }, 
+  inc:function(){this.counter(1)},
+  notify : null
+};
+o1.notify=null;
+o1.inc();
+o1.notify = function(a) { console.log(a)};
+o1.notify;
