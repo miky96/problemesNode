@@ -85,9 +85,8 @@ console.printaki2();
     }
 		fs.readFileSync(llista[i]);
 	}
-// b;
-//i =llista.length;
-
+  b;
+  i =llista.length;
 	return nova_llista;
 }
 */
@@ -127,19 +126,21 @@ f6 = function(llista,callback_final){
 //es el mateix que el 8 on fs.redFile es funcio, el async map fa un map de la funció
 //asyncMap =function(llista,funcio,callback_final)
 //f7=asyncMap(llista,f,callbackfinal);
+
+
+
 //problema10
 console.log("problema10")
 var o1={
-  counter:function(a){
-    var contador=0; 
-    contador+=a;
-    if (this.notify!=undefined||this.notify!=null){
-      return this.notify;
-    } }, 
-  inc:function(){this.counter(1)},
+  count : 0,
+  inc : function(){
+    this.count++;
+    if (this.notify!=undefined&&this.notify!=null){
+        this.notify(this.count);}; },
   notify : null
 };
 o1.notify=null;
 o1.inc();
+o1.count=1;
 o1.notify = function(a) { console.log(a)};
-o1.notify;
+o1.inc();
