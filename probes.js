@@ -1,26 +1,21 @@
 console.log("problema11")
-var pattern = (function() {
-  var obj = {};
-  obj.count = 0;
-  obj.inc = function(){
+var o2 = (function() {
+  var count = 0;
+  var inc = function(){
     this.count++;
     if (this.notify!=undefined&&this.notify!=null){
-        this.notify(this.count)
+        this.notify(this.count);
       };
     };
-  obj.notify = null;
-  function setNotify(){
-    obj.notify=f
+  var notify;
+  function setNotify(f){
+    this.notify=f;
   };
   return {
-    o2:obj,
-    setNoti:function(f){
-
-    };
+    inc:inc,
+    setNotify:setNotify
   };
 })();
-o2.notify=null;
-o2.inc();
-o2.count=1;
 o2.setNotify(function(a) { console.log(a)});
 o2.inc();
+
