@@ -190,3 +190,14 @@ function Counter(){
 o3=new Counter();
 o3.setNotify(function(a) { console.log(a)});
 o3.inc();
+
+//problema 13
+console.log("problema13");
+function DecreaseCounter(){
+};
+DecreaseCounter.prototype=new Counter();
+o4=new DecreaseCounter();
+o4.inc=function(){this.count--};
+o4.count;
+o4.inc();
+o4.count;

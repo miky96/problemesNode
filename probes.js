@@ -1,4 +1,4 @@
-console.log("problema12");
+
 function Counter(){
   this.count=1;
   this.inc=function(){
@@ -9,10 +9,16 @@ function Counter(){
   };
   this.notify= null;
   this.setNotify=function(f){
-  this.notify=f;
+    this.notify=f;
   };
 }
-o3=new Counter();
-o3.setNotify(function(a) { console.log(a)});
-o3.inc();
+console.log("problema13");
+function DecreaseCounter(){
+};
+DecreaseCounter.prototype=new Counter();
+o4=new DecreaseCounter();
+o4.inc=function(){this.count--};
+o4.count;
+o4.inc();
+o4.count;
 
