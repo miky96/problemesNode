@@ -1,21 +1,18 @@
-console.log("problema11")
-var o2 = (function() {
-  var count = 0;
-  var inc = function(){
-    count++;
+console.log("problema12");
+function Counter(){
+  this.count=1;
+  this.inc=function(){
+    this.count++;
     if (this.notify!=undefined&&this.notify!=null){
-        this.notify(count);
+        this.notify(this.count);
       };
-    };
-  var notify= null;
-  function setNotify(f){
-    this.notify=f;
   };
-  return {
-    inc:inc,
-    setNotify:setNotify
+  this.notify= null;
+  this.setNotify=function(f){
+  this.notify=f;
   };
-})();
-o2.setNotify(function(a) { console.log(a)});
-o2.inc();
+}
+o3=new Counter();
+o3.setNotify(function(a) { console.log(a)});
+o3.inc();
 

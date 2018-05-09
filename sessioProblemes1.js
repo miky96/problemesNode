@@ -152,9 +152,9 @@ o1.notify = function(a) { console.log(a)};
 o1.inc();
 
 //problema11
-console.log("problema11")
+console.log("problema11");
 var o2 = (function() {
-  var count = 0;
+  var count = 1;
   var inc = function(){
     count++;
     if (this.notify!=undefined&&this.notify!=null){
@@ -173,3 +173,20 @@ var o2 = (function() {
 o2.setNotify(function(a) { console.log(a)});
 o2.inc();
 //problema12
+console.log("problema12");
+function Counter(){
+  this.count=1;
+  this.inc=function(){
+    this.count++;
+    if (this.notify!=undefined&&this.notify!=null){
+        this.notify(this.count);
+      };
+  };
+  this.notify= null;
+  this.setNotify=function(f){
+  this.notify=f;
+  };
+}
+o3=new Counter();
+o3.setNotify(function(a) { console.log(a)});
+o3.inc();
