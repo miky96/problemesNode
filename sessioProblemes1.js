@@ -1,11 +1,12 @@
 //problema1
 //surt un undefined ja que no te un return el 3 que surt es pel console.log
+console.log("problema1");
 function f1(a) {
     console.log(a);
 };
 f1(3);
 //problema2
-//
+console.log("problema2");
 function f2(a) {
 //return a>= 0 ? 2*a : -1
   if (a>=0) {
@@ -17,7 +18,7 @@ function f2(a) {
 console.log(f2(-4));
 console.log(f2(2));
 //problema3
-//
+console.log("problema3");
 llista=[1,2,3,4];
 function f3(llista){
   f3_1=function(x) {
@@ -30,10 +31,12 @@ llista2=f3(llista);
 console.log(llista2);
 
 //problema4
+console.log("problema4");
 console.printaki = function() { console.log("Aqui");};
 console.printaki();
 
 //problema5
+console.log("problema5");
 function f4(a,b){
   return a+b;
 };
@@ -47,6 +50,7 @@ llistaB=llistaA.map(f4_1)
 console.log(llistaB);
 //problema6
 //fes b(a) i quan acabis crida c amb el resultat
+console.log("problema6");
 function f5(a,b,c){
   return c(b(a));
 };
@@ -57,6 +61,7 @@ console.log(f5(1, f2, function(r){ console.log(r)}));
 //aixo es una clausura ja que la funció on es defineix printaki2 deixa
 //cal ficar uns parentessis perque si no falla i cal ficar uns parentessis
 //darrere perque s'executi la funcio i passi a la segona
+console.log("problema7");
 console.printaki2 = (function(){
   var y=0;
   return function() {
@@ -91,6 +96,7 @@ console.printaki2();
 }
 */
 //solucio Exercici 8
+console.log("problema8");
 f6 = function(llista,callback_final){
 	var nova_llista=[];
   var i;
@@ -130,7 +136,7 @@ f6 = function(llista,callback_final){
 
 
 //problema10
-console.log("problema10")
+console.log("problema10");
 var o1={
   count : 0,
   inc : function(){
@@ -146,3 +152,24 @@ o1.notify = function(a) { console.log(a)};
 o1.inc();
 
 //problema11
+console.log("problema11")
+var o2 = (function() {
+  var count = 0;
+  var inc = function(){
+    count++;
+    if (this.notify!=undefined&&this.notify!=null){
+        this.notify(count);
+      };
+    };
+  var notify= null;
+  function setNotify(f){
+    this.notify=f;
+  };
+  return {
+    inc:inc,
+    setNotify:setNotify
+  };
+})();
+o2.setNotify(function(a) { console.log(a)});
+o2.inc();
+//problema12

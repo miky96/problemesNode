@@ -2,12 +2,12 @@ console.log("problema11")
 var o2 = (function() {
   var count = 0;
   var inc = function(){
-    this.count++;
+    count++;
     if (this.notify!=undefined&&this.notify!=null){
-        this.notify(this.count);
+        this.notify(count);
       };
     };
-  var notify;
+  var notify= null;
   function setNotify(f){
     this.notify=f;
   };
